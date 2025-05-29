@@ -12,10 +12,10 @@ jobs:
         with:
           python-version: '3.x'
       - run: |
-        python --version
-        python -m pip install --upgrade pip
-        pip --version
-        pip install pre-commit
-        pre-commit --version
+          python --version
+          python -m pip install --upgrade pip
+          pip --version
+          pip install pre-commit
+          pre-commit --version
       
 
