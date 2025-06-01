@@ -22,7 +22,7 @@ jobs:
       - name: Log env var
         run: |
           echo "Current name: ${{ github.event.inputs.name }}"
-          echo "Log all in inputs: ${{ github.event.inputs }}"
+          echo "Log all in inputs: ${{ toJson(github.event.inputs) }}"
 
       - name: Install pre-commit
         run: |
