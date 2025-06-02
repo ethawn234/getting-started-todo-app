@@ -18,8 +18,8 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
           echo "Input var name: ${{ github.event.inputs.name }}"
+          echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
 
   job2:
     runs-on: ubuntu-latest
