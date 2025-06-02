@@ -1,6 +1,13 @@
 name: Output info between jobs
 
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "name of the person"
+        default: "Noman"
+        type: string
+        required: false
   push:
 
 jobs:
@@ -10,7 +17,9 @@ jobs:
       - name: Log context obj
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: "echo GITHUB_CONTEXT: $GITHUB_CONTEXT"
+        run: |
+          echo "GITHUB_CONTEXT: $GITHUB_CONTEXT"
+          echo "Input var name: ${{ github.event.inputs.name }}"
 
   job2:
     runs-on: ubuntu-latest
